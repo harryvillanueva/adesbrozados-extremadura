@@ -30,7 +30,7 @@ export function Navbar() {
       <nav
         className={cn(
           "mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-3 transition-all duration-500 sm:px-6",
-          scrolled ? "glass-panel w-[94%]" : "w-[96%] border border-transparent",
+          scrolled ? "glass-panel w-[94%] text-foreground" : "w-[96%] border border-transparent text-white",
         )}
       >
         <a href="#inicio" className="group flex items-center gap-2.5">
@@ -39,7 +39,7 @@ export function Navbar() {
           </span>
           <span className="text-sm leading-tight font-extrabold tracking-tight">
             DESBROZADOS
-            <span className="block text-[10px] font-semibold tracking-[0.22em] text-muted-foreground">
+            <span className={cn("block text-[10px] font-semibold tracking-[0.22em]", scrolled ? "text-muted-foreground" : "text-white/70")}>
               EXTREMADURA
             </span>
           </span>
@@ -50,7 +50,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors duration-300 hover:bg-secondary hover:text-foreground"
+                className={cn("rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300", scrolled ? "text-muted-foreground hover:bg-secondary hover:text-foreground" : "text-white/80 hover:bg-white/10 hover:text-white")}
               >
                 {link.label}
               </a>
@@ -69,7 +69,7 @@ export function Navbar() {
             type="button"
             aria-label="Abrir menú"
             onClick={() => setOpen((v) => !v)}
-            className="grid size-10 place-items-center rounded-full border border-border md:hidden"
+            className={cn("grid size-10 place-items-center rounded-full border md:hidden", scrolled ? "border-border" : "border-white/40")}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
