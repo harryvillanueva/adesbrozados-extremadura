@@ -171,7 +171,7 @@ export function Contacto() {
                   <label className={labelClass} htmlFor="ubicacion">
                     Ubicación exacta del terreno *
                   </label>
-                  <input id="ubicacion" name="ubicacion" required className={inputClass} placeholder="Local: idad, polígono, parcela..." />
+                  <input id="ubicacion" name="ubicacion" required className={inputClass} placeholder="Localidad, polígono, parcela..." />
                 </div>
 
                 <div>
