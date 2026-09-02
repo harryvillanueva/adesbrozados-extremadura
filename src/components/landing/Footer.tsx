@@ -1,11 +1,11 @@
+import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Leaf, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const enlaces = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Nuestros Servicios", href: "#servicios" },
-  { label: "Sobre Nosotros", href: "#historia" },
-  { label: "Pedir Presupuesto", href: "#presupuesto" },
-  { label: "Aviso Legal y Privacidad", href: "#presupuesto" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Nuestros Servicios", href: "/#servicios" },
+  { label: "Sobre Nosotros", href: "/#historia" },
+  { label: "Pedir Presupuesto", href: "/#presupuesto" },
 ];
 
 export function Footer() {
@@ -53,6 +53,12 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <Link
+            to="/aviso-legal"
+            className="mt-4 inline-block text-sm font-semibold text-white/70 transition-colors duration-300 hover:text-lime-glow"
+          >
+            Aviso Legal y Privacidad
+          </Link>
         </div>
 
         <div>
@@ -75,7 +81,15 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/45">
-        © 2024 - 2026 Desbrozados Extremadura. Todos los derechos reservados.
+        © 2024 - 2026 Desbrozados Extremadura. Todos los derechos reservados. | Desarrollado por{" "}
+        <a
+          href="https://vigacode.com"
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-white/70 underline-offset-2 transition-colors duration-300 hover:text-lime-glow hover:underline"
+        >
+          vigacode.com
+        </a>
       </div>
     </footer>
   );
